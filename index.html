@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#100d12">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23100d12'/%3E%3Cpath d='M7 6h18v5H12v4h11v5H12v6H7z' fill='%23d4ff48'/%3E%3C/svg%3E">
+  <title>LAST ROUND — a one-bullet nightmare</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Last Round home"><span class="brand-mark">LR</span><span>LAST <b>ROUND</b></span></a>
+      <div class="chapter"><span class="live-dot"></span> SECTOR 09 <i>/</i> THE GUTTER</div>
+      <button class="sound-toggle" id="soundToggle" aria-label="Toggle sound">♫ <span>SOUND ON</span></button>
+    </header>
+    <section class="game-frame" aria-label="First-person shooter game">
+      <canvas id="game" aria-label="Game view"></canvas>
+      <div class="scanlines"></div>
+      <div class="vignette"></div>
+      <div class="crosshair"><i></i><b></b></div>
+      <div class="level-title"><small>UAC INCIDENT REPORT 09-13</small><strong>THE GUTTER</strong><span>ONE ROUND. NO SECOND CHANCES.</span></div>
+      <div class="hud">
+        <div class="hud-group vitals"><span class="hud-icon">✚</span><div><small>VITALS</small><strong id="health">100</strong></div><div class="health-bar"><i id="healthBar"></i></div></div>
+        <div class="hud-center"><span class="objective" id="objective">ELIMINATE ALL HOSTILES</span><span class="enemy-count" id="enemyCount">HOSTILES <b>03</b></span></div>
+        <div class="hud-group ammo"><div class="ammo-label"><small>CHAMBER</small><strong id="ammoLabel">LOADED</strong></div><span class="bullet-icon" id="bulletIcon">●</span></div>
+      </div>
+      <div class="pickup-prompt" id="pickupPrompt"><kbd>E</kbd> <span>RECLAIM YOUR ROUND</span></div>
+      <div class="damage-flash" id="damageFlash"></div>
+      <div class="toast" id="toast"></div>
+      <div class="overlay" id="startOverlay">
+        <div class="overlay-card">
+          <div class="eyebrow"><span></span> AN INDUSTRIAL NIGHTMARE</div>
+          <h1>LAST<br><em>ROUND</em></h1>
+          <p>One bullet. An entire nest of demons.<br><b>Make every shot count — then go get it back.</b></p>
+          <button class="start-button" id="startButton">ENTER THE GUTTER <span>↗</span></button>
+          <div class="control-note"><span>W A S D</span> MOVE <i>·</i> <span>MOUSE</span> LOOK <i>·</i> <span>CLICK</span> FIRE <i>·</i> <span>E</span> PICK UP</div>
+        </div>
+        <div class="overlay-stamp">NO<br>BACKUP<br>AVAILABLE</div>
+      </div>
+      <div class="overlay hidden" id="endOverlay">
+        <div class="overlay-card end-card"><div class="eyebrow" id="endEyebrow"><span></span> MISSION REPORT</div><h2 id="endTitle">SECTOR CLEARED</h2><p id="endText"></p><button class="start-button" id="restartButton">RUN IT BACK <span>↻</span></button></div>
+      </div>
+      <div class="mobile-controls" id="mobileControls">
+        <div class="dpad"><button data-move="forward" aria-label="Move forward">▲</button><button data-move="left" aria-label="Move left">◀</button><button data-move="back" aria-label="Move back">▼</button><button data-move="right" aria-label="Move right">▶</button></div>
+        <div class="mobile-actions"><button id="touchPickup">PICK UP<br><small>E</small></button><button id="touchFire">FIRE</button></div>
+      </div>
+    </section>
+    <footer class="bottom-bar"><span><b>01</b> / ONE ROUND IN THE CHAMBER</span><span class="footer-center">RECLAIM THE BULLET TO FIRE AGAIN</span><span>WALK THE LINE <b>↗</b></span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
