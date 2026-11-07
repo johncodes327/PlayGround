@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#071b26">
+  <title>Stillwater — Wild Waters</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="world" aria-label="Fishing lake scene"></canvas>
+    <div class="scene-vignette"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Stillwater home"><span class="brand-mark">S<span>·</span></span><span class="brand-name">STILLWATER<small>WILD WATERS</small></span></a>
+      <div class="location"><span class="live-dot"></span><div><strong id="map-name">MIRROR LAKE</strong><small id="map-detail">PACIFIC NORTHWEST · 06:42 AM</small></div></div>
+      <div class="top-actions"><button class="icon-button" id="sound-btn" title="Toggle sound" aria-label="Toggle sound">♫</button><button class="profile"><span>J</span><strong>ANGLER <small>LEVEL 04</small></strong><i>⌄</i></button></div>
+    </header>
+
+    <section class="left-rail">
+      <div class="rail-card weather-card"><span class="eyebrow">RIGHT NOW</span><div class="weather"><span class="sun-icon">☀</span><span><b id="temp">18°</b><small id="weather-text">CLEAR SKIES</small></span></div><div class="weather-line"><span>WIND</span><b id="wind">2 KTS ↗</b></div><div class="weather-line"><span>WATER</span><b id="water-temp">14° C</b></div></div>
+      <button class="rail-card map-card" id="map-btn"><span class="eyebrow">YOUR LOCATION <span class="arrow">↗</span></span><div class="map-thumb"><span class="map-river"></span><span class="map-pin">⌖</span></div><span class="map-label">Explore waters <b>→</b></span></button>
+      <button class="rail-card journal-card" id="book-btn"><span class="eyebrow">FIELD JOURNAL <span class="arrow">↗</span></span><div class="journal-progress"><b id="species-count">03</b><span>/ <b id="species-total">00</b><small>SPECIES FOUND</small></span><span class="progress-ring"><i></i></span></div><div class="mini-fish">◌ <span>Next discovery awaits</span></div></button>
+    </section>
+
+    <section class="right-rail">
+      <div class="session-pill"><span class="session-dot"></span><span id="session-label">A quiet morning</span><span class="pill-divider"></span><b id="clock">06:42</b></div>
+      <div class="catch-streak"><span class="streak-icon">✦</span><span><b id="streak">0</b><small>STREAK</small></span></div>
+    </section>
+
+    <section class="spot-card"><span class="spot-kicker"><span>✦</span> FISHING SPOT</span><h1 id="spot-title">The Glass<br>Water</h1><p id="spot-copy">A hidden pocket beneath the pines.<br>Take your time. The lake is listening.</p><div class="spot-meta"><span>◷ &nbsp; DAWN</span><span id="spot-depth">⌁ &nbsp; 6.4 M DEPTH</span></div></section>
+
+    <section class="depth-card"><div class="depth-head"><span>DEPTH FINDER</span><span id="depth-value">6.4 m</span></div><div class="depth-graphic"><div class="depth-grid"></div><svg viewBox="0 0 220 54" preserveAspectRatio="none"><path class="depth-fill" d="M0 29 C20 25,28 32,47 26 S76 30,91 20 S118 27,137 24 S157 34,173 24 S199 29,220 15 L220 54 L0 54Z"/><path class="depth-path" d="M0 29 C20 25,28 32,47 26 S76 30,91 20 S118 27,137 24 S157 34,173 24 S199 29,220 15"/></svg><span class="depth-marker"></span></div><div class="depth-legend"><span>SHORE</span><span>DROP-OFF</span><span>DEEP</span></div></section>
+
+    <section class="rod-hud"><div class="rod-label"><span class="rod-icon">⌁</span><span><b>CARBON PRO</b><small>SPINNING ROD · 7'2"</small></span></div><div class="line-status"><span class="line-dot"></span><span id="line-label">LINE READY</span></div></section>
+
+    <div class="center-message" id="center-message"><span class="message-icon">✧</span><span id="message-title">The water is yours.</span><small id="message-sub">Cast into the morning.</small></div>
+
+    <div class="action-zone"><div class="tension-wrap" id="tension-wrap"><div class="tension-copy"><span>LINE TENSION</span><b id="tension-text">STEADY</b></div><div class="tension-track"><i id="tension-bar"></i><span></span><span></span></div><small>Ease off when the fish runs. Reel when it tires.</small></div><button id="cast-btn" class="cast-button"><span class="cast-symbol">↗</span><span class="cast-text">CAST LINE<small>SPACE</small></span><span class="cast-arrow">→</span></button><button id="reel-btn" class="reel-button" aria-label="Reel in">↻ <span>REEL IN</span></button></div>
+
+    <div class="toast" id="toast"></div>
+    <div class="modal-backdrop" id="modal-backdrop"><div class="modal" id="modal"><button class="modal-close" id="modal-close" aria-label="Close">×</button><div id="modal-content"></div></div></div>
+    <footer class="bottom-hint"><span>WASD</span> MOVE BOAT <i>·</i> <span>CLICK WATER</span> CAST <i>·</i> <span>SPACE</span> CAST / STRIKE <i>·</i> <span>HOLD REEL</span> BRING IT HOME</footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
